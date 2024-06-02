@@ -16,12 +16,12 @@
         <div class="login-box">
             <form action="loginadmin.php" method="POST">
                 <div class="input-container">
-                    <label for="identifiant">Identifiant</label>
-                    <input type="text" id="identifiant" name="utilisateur" required>
+                    <label for="utilisateur">Identifiant</label>
+                    <input type="text" id="utilisateur" name="utilisateur" required>
                 </div>
                 <div class="input-container">
-                    <label for="mdp">Mot de passe</label>
-                    <input type="password" id="mdp" name="password" required>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit">Connexion</button>
             </form>

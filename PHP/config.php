@@ -1,5 +1,4 @@
 <?php
-
 function connexionBDD(){
     $host = "localhost";
     $dbname = "NoteNote";
@@ -12,9 +11,9 @@ function connexionBDD(){
         return $pdo;
     }
     catch(PDOException $e){
-        echo "Erreur : ".$e -> getMessage(). "<br/>";
+        echo "Erreur de connexion à la base de données : ".$e->getMessage();
+        // Gérer l'erreur de connexion à la base de données
         return null; // Ajout pour indiquer qu'une erreur s'est produite lors de la connexion
     }
 }
-
-?> 
+?>
