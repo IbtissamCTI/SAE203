@@ -2,7 +2,6 @@
 session_start();
 
 include 'config.php';
-
 $pdo=connexionDB();
 if (isset($_POST['username'])) {
     $username = $_POST['username'];

@@ -1,15 +1,3 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION["lastname"])) {
-    header("Location indexco.php");
-    }
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +6,6 @@ if (!isset($_SESSION["lastname"])) {
     <title>Document</title>
 </head>
 <body>
-    PAGE DE CONNEXION
+    ESPACE ETUDIANT
 </body>
 </html>
