@@ -1,19 +1,18 @@
 <?php
-function connexionBDD(){
+function connexionDB(){
     $host = "localhost";
-    $dbname = "NoteNote";
-    $user = "root";
-    $pswrd = "";
+    $dbname = "NOTE";
+    $user ="root";
+    $pass ="";
 
     try {
-        $pdo = new PDO('mysql:host='. $host . ';dbname=' . $dbname . ';charset=utf8', $user, $pswrd );
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = new PDO('mysql:host='. $host . ';dbname='. $dbname .';charset=utf8', $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
         return $pdo;
-    }
-    catch(PDOException $e){
-        echo "Erreur de connexion à la base de données : ".$e->getMessage();
-        // Gérer l'erreur de connexion à la base de données
-        return null; // Ajout pour indiquer qu'une erreur s'est produite lors de la connexion
-    }
+     }
+    catch(PDOException $e) {
+        echo "Erreur : ".$e -> getMessage()."<br/>";
+}
 }
 ?>
