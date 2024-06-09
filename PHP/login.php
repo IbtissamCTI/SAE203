@@ -2,41 +2,41 @@
 session_start();
 
 include 'config.php';
-$pdo=connexionDB();
-if (isset($_POST['username'])) {
-    $username = $_POST['username'];
+$pdo = connexionDB();
+
+if (isset($_POST['login'])) {
+    $login = $_POST['login'];
     $password = $_POST['password'];
 
-    
-    $stmt = $pdo->prepare("SELECT * FROM COMPTES WHERE utilisateur = :username");
-    $stmt->bindParam(':username', $username);
-   // $stmt->bindParam(':password', $password);
+    $stmt = $pdo->prepare("SELECT * FROM Compte WHERE login = :login");
+    $stmt->bindParam(':login', $login);
     $stmt->execute();
     $user = $stmt->fetch();
-    var_dump($user);
-    if ( password_verify($password,$user['password'])){
-        echo "conenxion reussi";
-            $_SESSION['user_id'] = $user['id'];
-            echo $user['id'];
 
-        }
-    
-  
-        switch ($user['id']) {
-            case 1: 
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['type_compte'] = $user['type_compte'];
+        $_SESSION['id_compte'] = $user['id_compte']; // Ajoutez cette ligne pour stocker l'id_compte dans la session
+
+        echo "Connexion réussie";
+
+        switch ($user['type_compte']) {
+            case 'admin': 
                 header("Location: adminboard.php");
                 die();
                 break;
-            case 2: 
+            case 'enseignant': 
                 header("Location: profboard.php");
                 die();
                 break;
-            case 3: 
+            case 'etudiant': 
                 header("Location: etudiantboard.php");
                 die();
                 break;
         }
-    } 
+    } else {
+        echo "Identifiant ou mot de passe incorrect.";
+    }
+} 
 ?>
  
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ if (isset($_POST['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="http://localhost/SAE203-201/CSS/ETUDIANT.css">
+    <link rel="stylesheet" href="http://localhost/SAE203-201/CSS/ETUDIANT.css">
     <title>Page de connexion</title>
 </head>
 <body>
@@ -56,9 +56,9 @@ if (isset($_POST['username'])) {
         <div class="login-box">
             <form method="POST">
                 <div class="input-container">
-                    <label for="utilisateur">Identifiant</label>
-                    <input type="text" id="utilisateur" name="username" required>
-                                </div>
+                    <label for="login">Identifiant</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
                 <div class="input-container">
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password" required>
@@ -73,3 +73,6 @@ if (isset($_POST['username'])) {
     </div>
 </body>
 </html>
+
+
+

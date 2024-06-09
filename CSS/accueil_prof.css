@@ -1,0 +1,75 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../photo/pleinsARBRES-V1.png') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2e6c4d;
+}
+
+.header .logo {
+    width: 150px;
+}
+
+.header .logout {
+    background-color: #415543;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.header .logout:hover {
+    background-color: #208b62;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* Ajuster en fonction de la hauteur de l'en-tête */
+    padding: 20px;
+}
+
+.btn {
+    background-color: #2e6c4d;
+    color: white;
+    padding: 40px 60px;
+    margin: 10px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #208b62;
+}
+
+/* Pour afficher les boutons côte à côte */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .btn {
+        margin: 85px;
+    }
+}

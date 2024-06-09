@@ -1,0 +1,54 @@
+/* Centre le tableau */
+table {
+    position: absolute;
+    top: 50%;
+    margin: 0 auto;
+    width: 80%;
+   
+  }
+  
+  /* Ajoute un fond vert au tableau */
+  table {
+    background-color: #C6F7D0; /* vert clair */
+    border-collapse: collapse;
+    border-radius: 10px; /* bordures rondes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* ombre légère */
+  }
+  
+  /* Ajoute des bordures rondes aux cellules */
+  th, td {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  /* Met en évidence les en-têtes du tableau */
+  th {
+    background-color: #4CAF50; /* vert foncé */
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Ajoute un effet de hover sur les lignes du tableau */
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Centre les éléments de formulaire */
+  form {
+    text-align: center;
+  }
+  
+  /* Ajoute un style aux boutons */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }

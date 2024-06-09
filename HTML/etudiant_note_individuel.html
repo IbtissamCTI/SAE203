@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="../CSS/note_étudiant_individuellement.css"> <!-- Assurez-vous que le nom du fichier CSS est correct -->
+    <script src="../JS/notes.js" defer></script> <!-- Lien vers le fichier JavaScript -->
+</head>
+<body>
+    <header class="header">
+        <img src="../photo/logoblanc.png" alt="Logo" class="logo"> <!-- Remplacez par le chemin de votre logo -->
+        <button class="logout">Quitter</button>
+    </header>
+
+    <div id="back-button">
+        <a href="../HTML/listeetudiant_partieprof.html">
+            <img src="../photo/BOUTONARRIERE.png" alt="Back Button" class="back-button-img">
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>
+            <img src="../photo/notelog 1.png" alt="Note" class="note-img"> <!-- Remplacez par le chemin de votre image -->
+        </h1>
+        <div class="subheading">CHANRANI Ben-Ylane</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>UE</th>
+                    <th>Matière</th>
+                    <th>Intitulé de l'évaluation</th>
+                    <th>Note</th>
+                    <th>Coefficient</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td contenteditable="true">Exprimer</td>
+                    <td contenteditable="true">Anglais</td>
+                    <td contenteditable="true">Verbes irréguliers</td>
+                    <td contenteditable="true">10/20</td>
+                    <td contenteditable="true">0,5</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Concevoir</td>
+                    <td contenteditable="true">Hébergement</td>
+                    <td contenteditable="true">Casssage de mot de passe</td>
+                    <td contenteditable="true">17/20</td>
+                    <td contenteditable="true">1</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Exprimer</td>
+                    <td contenteditable="true">Anglais</td>
+                    <td contenteditable="true">Verbes irréguliers</td>
+                    <td contenteditable="true">10/20</td>
+                    <td contenteditable="true">0,5</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Concevoir</td>
+                    <td contenteditable="true">Hébergement</td>
+                    <td contenteditable="true">Casssage de mot de passe</td>
+                    <td contenteditable="true">17/20</td>
+                    <td contenteditable="true">1</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Exprimer</td>
+                    <td contenteditable="true">Anglais</td>
+                    <td contenteditable="true">Verbes irréguliers</td>
+                    <td contenteditable="true">10/20</td>
+                    <td contenteditable="true">0,5</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Concevoir</td>
+                    <td contenteditable="true">Hébergement</td>
+                    <td contenteditable="true">Casssage de mot de passe</td>
+                    <td contenteditable="true">17/20</td>
+                    <td contenteditable="true">1</td>
+                </tr>
+                <!-- Ajoutez plus de lignes si nécessaire -->
+            </tbody>
+        </table>
+        <div class="buttons">
+            <button class="view-btn" onclick="enableEditing()">Modifier</button>
+            <button class="save-btn" onclick="saveData()">Enregistrer</button>
+        </div>
+    </div>
+</body>
+</html>

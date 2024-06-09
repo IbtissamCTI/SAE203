@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteNote - Espace Professeur</title>
+    <link rel="stylesheet" href="../CSS/cssprofesseurs.css">
+</head>
+<body>
+
+    <div class="background-container">
+        <div class="tree-left"></div>
+        <div class="tree-right"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <img src="../photo/logoblanc.png" alt="NoteNote Logo">
+            <p>Les fruits du travail</p>
+        </div>
+
+        <div class="login-box">
+            <form id="loginForm" action="accueil_prof.html" method="POST">
+                <div class="input-container">
+                    <label for="identifiant">Identifiant</label>
+                    <input type="text" id="identifiant" name="identifiant" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Connexion</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>ESPACE PROFESSEUR</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('loginForm');
+
+            form.addEventListener('submit', function(event) {
+                var identifiant = document.getElementById('identifiant').value;
+                var password = document.getElementById('password').value;
+
+                // Validation basique : Vérification si les champs ne sont pas vides
+                if (identifiant.trim() === '' || password.trim() === '') {
+                    alert('Veuillez remplir tous les champs.');
+                    event.preventDefault(); // Empêcher la soumission du formulaire
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* Réinitialisation du CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles du corps */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../photo/pleinsARBRES-V1.png') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+/* Styles de l'en-tête */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2e6c4d;
+}
+
+header .logo {
+    width: 150px;
+}
+
+header nav {
+    margin-left: auto; /* Aligner le bouton de déconnexion à droite */
+}
+
+.logout {
+    background-color: #415543;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout:hover {
+    background-color: #208b62;
+}
+
+/* Styles du bouton de retour */
+#back-button {
+    position: absolute;
+    top: 160px;
+    left: 80px;
+    cursor: pointer;
+}
+
+#back-button .back-button-img {
+    width: 50px;
+    height: auto;
+}
+
+/* Styles du conteneur principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    padding: 60px;
+}
+
+/* Styles du conteneur du formulaire */
+.form-container {
+    background-color: #2e6c4d;
+    padding: 20px;
+    border-radius: 10px; /* Forme rectangulaire avec coins arrondis */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 800px; /* Largeur du conteneur de formulaire */
+    margin-top: 20px;
+}
+
+.form-container label {
+    color: white;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.form-container input {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    padding: 15px; /* Légèrement agrandit la taille du champ */
+    margin: 5px 0 15px;
+    border: none; /* Supprimer les bordures */
+    background-color: white; /* Couleur blanche pour les champs de saisie */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: none;
+    font-size: 20px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-btn {
+    background-color: #415543;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-btn:hover {
+    background-color: #208b62;
+}

@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('../photo/branch\ note\ 1.png'); /* Replace with your tree image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2e6c4d;
+}
+
+.header .logo {
+    width: 150px;
+}
+
+.header .logout {
+    background-color: #415543;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.header .logout:hover {
+    background-color: #208b62;
+}
+#back-button {
+    position: absolute;
+    top: 160px; /* Adjust the position as needed */
+    left: 80px; /* Adjust the position as needed */
+    cursor: pointer;
+    z-index: 1;
+}
+
+#back-button .back-button-img {
+    width: 70px; /* Adjust the size as needed */
+    height: auto;
+}
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2e6c4d;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    display: block;
+    font-size: 24px;
+    color: #415543;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #2e6c4d;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.view-btn {
+    background-color: #2e6c4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background-color: #208b62;
+}

@@ -1,0 +1,131 @@
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #79ab84;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('../photo/branch note 1.png'); /* Replace with the path to your tree image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+
+
+.logo-container {
+    position: relative;
+}
+
+
+.header .logout {
+    background-color: #415543;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.header .logout:hover {
+    background-color: #208b62;
+}
+
+#back-button {
+    position: absolute;
+    top: 160px; /* Adjust the position as needed */
+    left: 80px; /* Adjust the position as needed */
+    cursor: pointer;
+    z-index: 1;
+}
+
+#back-button .back-button-img {
+    width: 70px; /* Adjust the size as needed */
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh; /* Ensures the container takes up full height */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.evaluation-title {
+    width: 400px; /* Adjust the width as needed */
+    margin-bottom: 20px;
+}
+
+.evaluation-form {
+    display: flex;
+    background-color: #2e6c4d;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 140%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.evaluation-form form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-left, .form-right {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding: 10px;
+}
+
+label {
+    margin-top: 5px; /* Increase this value to add more space above the label */
+    text-align: left;
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #2e6c4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #208b62;
+}

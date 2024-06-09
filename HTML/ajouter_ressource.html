@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteNote</title>
+    <link rel="stylesheet" href="../CSS/ajouter_categorie.css">
+</head>
+<body>
+    <header>
+        <img src="../photo/logoblanc.png" alt="NoteNote Logo" class="logo">
+        <nav>
+            <button class="logout" onclick="location.href='index.html'">Quitter</button>
+        </nav>
+    </header>
+    <div id="back-button">
+        <a href="admin_partie_ressources.html">
+            <img src="../photo/BOUTONARRIERE.png" alt="Back Button" class="back-button-img">
+        </a>
+    </div>
+    <main class="container">
+        <div class="form-container">
+            <label for="professeur">Ressource</label>
+            <input type="text" id="professeur" name="professeur">
+            <label for="professeur">Classe</label>
+            <input type="text" id="professeur" name="professeur">
+            <div class="form-buttons">
+                <button class="form-btn" id="effacer" onclick="effacerChamps()">Effacer</button>
+                <button class="form-btn" id="envoyer">Envoyer</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function effacerChamps() {
+            // Récupérer les éléments des champs de saisie
+            var professeurInput = document.getElementById('professeur');
+            var classeInput = document.getElementById('classe');
+            var ressourceInput = document.getElementById('ressource');
+
+            // Effacer les valeurs des champs de saisie
+            professeurInput.value = '';
+            classeInput.value = '';
+            ressourceInput.value = '';
+        }
+    </script>
+</body>
+</html>
