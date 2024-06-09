@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +5,8 @@
 }
 
 body {
-    font-family: 'Times New Roman',"Times New Roman" ;
-    background: url('../photo/pleinsARBRES-V1.png') no-repeat center center fixed;
+    font-family: 'Times New Roman', "Times New Roman";
+    background: url('photo/pleinsARBRES-V1.png') no-repeat center center fixed;
     background-size: cover;
     text-align: center;
     margin: 0;
@@ -16,10 +15,6 @@ body {
 
 .header {
     margin-top: 50px;
-}
-
-.header img {
-    width: 450px;
 }
 
 .header p {
@@ -36,52 +31,12 @@ body {
 }
 
 .login-box {
-    background-color: rgba(46, 108, 77, 50); /* Semi-transparent background */
+    background-color: rgba(46, 108, 77, 0.5); /* Semi-transparent background */
     border-radius: 10px;
     padding: 40px 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 350px;
 }
 
-.login-box h2 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
 
-.login-box input {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    border: none;
-    font-size: 18px;
-}
 
-.login-box input[type="text"],
-.login-box input[type="password"] {
-    margin-bottom: 20px;
-}
 
-.login-box input[type="text"]:focus,
-.login-box input[type="password"]:focus {
-    outline: none;
-    border: 2px solid #244c36;
-}
-
-.login-box button {
-    width: 100%;
-    padding: 15px;
-    background-color: #244c36;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-box button:hover {
-    background-color: #1b3b28;
-}

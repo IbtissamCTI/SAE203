@@ -13,9 +13,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('../photo/branch note 1.png'); /* Replace with the path to your tree image */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center bottom;
+   
 }
 
 
@@ -81,7 +79,7 @@ body {
     margin-bottom: 20px;
 }
 
-.evaluation-form form {
+.form-group {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -90,7 +88,7 @@ body {
 .form-left, .form-right {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 10%;
     padding: 10px;
 }
 

@@ -20,12 +20,13 @@ if (!isset($_SESSION['id_compte']) || $_SESSION['type_compte'] !== 'enseignant')
 <body>
     <div class="header">
         <img src="../photo/logoblanc.png" alt="NoteNote Logo" class="logo">
-        <button class="logout" onclick="location.href='index.php'">Quitter</button>
+        <button class="logout" onclick="location.href='login.php'">Quitter</button>
     </div>
 
     <div class="container">
         <button class="btn" onclick="location.href='Ajouternote.php'">Ajouter Evaluation</button>
-        <button class="btn" onclick="location.href='etu.php'">Acceder à la liste</button>
+        <button class="btn" onclick="location.href='etuliste.php'">Acceder à la liste</button>
+        <button class="btn" onclick="location.href='Modifnote.php'">Modifier des notes</button>
     </div>
 </body>
 </html>
