@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['groupe'])) {
     $stmt->execute();
     $etudiants = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {
-    // Afficher tous les étudiants par défaut avec leur moyenne pondérée
+    // LE AVG POUR AFFICHER LEUR MOYENNE DONNAIT UNE ERREUR
     $stmt = $pdo->prepare("
         SELECT e.id_compte, e.nom, e.prenom, 
         IFNULL(SUM(ev.note * ev.coef) / NULLIF(SUM(ev.coef), 0), 'N/A') as moyenne

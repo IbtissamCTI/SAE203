@@ -4,51 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter une Ressource</title>
+    <link rel="stylesheet" href="../CSS/ressourceajout.css">
 </head>
 <body>
-    <h2>Ajouter une Ressource</h2>
+    <header>
+        <img src="../photo/logoblanc.png" alt="NoteNote Logo" class="logo">
+        <nav>
+            <button class="logout" onclick="location.href='login.php'">Quitter</button>
+        </nav>
+    </header>
+
     <div id="back-button">
-        <a href="admin_partie_ressources.php">
+        <a href="../PHP/admin_partie_ressources.php">
             <img src="../photo/BOUTONARRIERE.png" alt="Back Button" class="back-button-img">
         </a>
     </div>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-        <label for="id_ressource">ID Ressource:</label><br>
-        <input type="number" id="id_ressource" name="id_ressource" required><br><br>
-        
-        <label for="libelle">Libellé:</label><br>
-        <input type="text" id="libelle" name="libelle" required><br><br>
-        
-        <label for="libelle_ue">Libellé UE:</label><br>
-        <select id="libelle_ue" name="libelle_ue" required>
-            <?php
-            include 'config.php';
 
-            $pdo = connexionDB();
+    <div class="container">
+        <form class="form-container" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <label for="id_ressource">ID Ressource:</label>
+            <input type="number" id="id_ressource" name="id_ressource" required>
+            
+            <label for="libelle">Libellé:</label>
+            <input type="text" id="libelle" name="libelle" required>
+            
+            <label for="libelle_ue">Libellé UE:</label>
+            <select id="libelle_ue" name="libelle_ue" required>
+                <?php
+                include 'config.php';
 
-            $sql = "SELECT id_ue, libelle FROM UE";
-            $stmt = $pdo->query($sql);
+                $pdo = connexionDB();
 
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<option value='" . $row['id_ue'] . "'>" . $row['libelle'] . "</option>";
-            }
-            ?>
-        </select><br><br>
+                $sql = "SELECT id_ue, libelle FROM UE";
+                $stmt = $pdo->query($sql);
 
-        <label for="id_enseignant">Enseignant:</label><br>
-        <select id="id_enseignant" name="id_enseignant" required>
-            <?php
-            $sql = "SELECT id_compte, nom, prenom FROM Enseignant";
-            $stmt = $pdo->query($sql);
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<option value='" . $row['id_ue'] . "'>" . $row['libelle'] . "</option>";
+                }
+                ?>
+            </select>
 
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<option value='" . $row['id_compte'] . "'>" . $row['nom'] . " " . $row['prenom'] . "</option>";
-            }
-            ?>
-        </select><br><br>
+            <label for="id_enseignant">Enseignant:</label>
+            <select id="id_enseignant" name="id_enseignant" required>
+                <?php
+                $sql = "SELECT id_compte, nom, prenom FROM Enseignant";
+                $stmt = $pdo->query($sql);
 
-        <input type="submit" value="Ajouter Ressource">
-    </form>
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<option value='" . $row['id_compte'] . "'>" . $row['nom'] . " " . $row['prenom'] . "</option>";
+                }
+                ?>
+            </select>
+
+            <div class="form-buttons">
+                <input type="submit" class="form-btn" value="Ajouter Ressource">
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>
 

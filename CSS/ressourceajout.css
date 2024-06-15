@@ -1,8 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -10,6 +12,7 @@ body {
     background-size: cover;
     text-align: center;
 }
+
 
 header {
     display: flex;
@@ -53,6 +56,7 @@ header nav {
     height: auto;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -60,6 +64,7 @@ header nav {
     margin-top: 100px;
     padding: 60px;
 }
+
 
 .form-container {
     background-color: #2e6c4d;
@@ -78,9 +83,10 @@ header nav {
     margin: 5px 0;
 }
 
-.form-container input {
+.form-container input,
+.form-container select {
     width: 100%; 
-    padding: 15px;
+    padding: 15px; 
     margin: 5px 0 15px;
     border: none; 
     background-color: white; 
@@ -103,8 +109,10 @@ header nav {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 20px;
 }
 
 .form-btn:hover {
     background-color: #208b62;
 }
+
