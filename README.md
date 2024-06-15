@@ -37,6 +37,14 @@ Vous trouverez tous les détails de la vision de notre site sur cette présentat
 
 Ainsi que le dossier du projet : [GOOGLE DOC](https://docs.google.com/document/d/1Iv5D4oVi7Ohl9ty1djWgr4huBpyErqNHyjCvaiPHAXw/edit?usp=sharing)
 
+## LOGIN DES ESPACES
+
+Espace professeur : professeur
+Espace admin: Admin
+Espace etudiant: etudiant 
+Le mot de passe des espaces est: test
+!!! SENSIBLE A LA CASSE 
+
 ## Problèmes rencontrés lors du projet 
 
 Nous avons rencontré un problème depuis la dernière seance de SAE pour heberger le site sur AlwaysData. (Problem: Acces Denied)
