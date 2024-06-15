@@ -1,4 +1,3 @@
-/* Réinitialisation des styles par défaut */
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +42,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: calc(100vh - 60px); /* Ajuster en fonction de la hauteur de l'en-tête */
+    height: calc(100vh - 60px); 
     padding: 20px;
 }
 
@@ -63,7 +62,7 @@ body {
     background-color: #208b62;
 }
 
-/* Pour afficher les boutons côte à côte */
+
 @media (min-width: 768px) {
     .container {
         flex-direction: row;

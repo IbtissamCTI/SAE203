@@ -4,7 +4,7 @@ session_start();
 include 'config.php';
 $pdo = connexionDB();
 
-if (isset($_POST['login'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST['login'];
     $password = $_POST['password'];
 
@@ -15,64 +15,52 @@ if (isset($_POST['login'])) {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['type_compte'] = $user['type_compte'];
-        $_SESSION['id_compte'] = $user['id_compte']; // Ajoutez cette ligne pour stocker l'id_compte dans la session
-
-        echo "Connexion réussie";
+        $_SESSION['id_compte'] = $user['id_compte']; 
 
         switch ($user['type_compte']) {
             case 'admin': 
-                header("Location: adminboard.php");
-                die();
-                break;
+                header("Location: accueil_admin.php");
+                exit();
             case 'enseignant': 
                 header("Location: profboard.php");
-                die();
-                break;
+                exit();
             case 'etudiant': 
-                header("Location: etudiantboard.php");
-                die();
-                break;
+                header("Location: note_etudiants.php");
+                exit();
         }
     } else {
-        echo "Identifiant ou mot de passe incorrect.";
+        $error_message = "Identifiant ou mot de passe incorrect.";
     }
-} 
+}
 ?>
- 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <title>Page de connexion</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <p>Les fruits du travail</p>
-        </div>
-
+    <div class="header">
+        <img src="../photo/logoNOTENOTEvert.png" alt="NoteNote Logo">
+        <p>Les fruits du travail</p>
+    </div>
+    <div class="login-container">
         <div class="login-box">
+            <h2>Connexion</h2>
+            <?php
+            if (isset($error_message)) {
+                echo "<p style='color: red;'>$error_message</p>";
+            }
+            ?>
             <form method="POST">
-                <div class="input-container">
-                    <label for="login">Identifiant</label>
-                    <input type="text" id="login" name="login" required>
-                </div>
-                <div class="input-container">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit">Connexion</button>
+                <input type="text" name="login" placeholder="Identifiant" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
             </form>
-        </div>
-
-        <div class="footer">
-            <p>ESPACE CONNEXION</p>
         </div>
     </div>
 </body>
 </html>
-
-
-

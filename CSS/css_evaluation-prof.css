@@ -1,5 +1,4 @@
 
-/* Réinitialisation des styles par défaut */
 * {
     margin: 0;
     padding: 0;
@@ -8,20 +7,32 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #79ab84;
+    background-color: #ffffff;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('../photo/branch note 1.png'); /* Replace with the path to your tree image */
-   
+    background-image: url('../photo/branch note 1.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
-
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2e6c4d;
+    position: relative;
+}
 
 .logo-container {
     position: relative;
 }
 
+.header .logo {
+    width: 150px;
+}
 
 .header .logout {
     background-color: #415543;
@@ -39,14 +50,14 @@ body {
 
 #back-button {
     position: absolute;
-    top: 160px; /* Adjust the position as needed */
-    left: 80px; /* Adjust the position as needed */
+    top: 160px; 
+    left: 80px; 
     cursor: pointer;
     z-index: 1;
 }
 
 #back-button .back-button-img {
-    width: 70px; /* Adjust the size as needed */
+    width: 70px; 
     height: auto;
 }
 
@@ -57,47 +68,42 @@ body {
     justify-content: center;
     padding: 20px;
     position: relative;
-    min-height: 100vh; /* Ensures the container takes up full height */
+    min-height: 100vh; 
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .evaluation-title {
-    width: 400px; /* Adjust the width as needed */
+    width: 400px; 
     margin-bottom: 20px;
 }
 
 .evaluation-form {
     display: flex;
+    flex-direction: column;
     background-color: #2e6c4d;
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     color: white;
-    width: 140%;
+    width: 100%;
     max-width: 800px;
     margin-bottom: 20px;
-}
-
-.form-group {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
 }
 
 .form-left, .form-right {
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 100%;
     padding: 10px;
 }
 
 label {
-    margin-top: 5px; /* Increase this value to add more space above the label */
+    margin-top: 5px; 
     text-align: left;
 }
 
-input, select {
+input {
     padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
@@ -107,21 +113,19 @@ input, select {
 
 .buttons {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
     margin-top: 20px;
 }
 
 .btn {
-    background-color: #2e6c4d;
-    color: white;
+    background-color: #005b2e;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
 }
 
 .btn:hover {

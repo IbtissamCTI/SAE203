@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #738b7d; /* Replace with your desired background color */
+    background-color: #738b7d; 
     text-align: center;
     margin: 0;
     padding: 0;
@@ -52,12 +52,12 @@ body {
 }
 
 .notes-recente .note-image {
-    width: 200px; /* Adjust the size as needed */
+    width: 200px; 
     margin-bottom: 10px;
 }
 
 .notes-recente .recente {
-    margin-top: -20px; /* Adjust to position the text correctly with the image */
+    margin-top: -20px; 
 }
 
 .notes-recente ul {
@@ -121,7 +121,7 @@ body {
 .btn-small:hover {
     background-color: #208b62;
 }
-/* Autres styles restent inchangés */
+
 
 .notes-recente .grid-container {
     display: grid;

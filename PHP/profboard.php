@@ -1,11 +1,36 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté
-if (!isset($_SESSION['id_compte']) || $_SESSION['type_compte'] !== 'enseignant') {
-    // Si l'utilisateur n'est pas connecté en tant qu'enseignant, rediriger vers la page de connexion
-    header("Location: index.php");
-    exit(); // Arrêter l'exécution du script après la redirection
+include 'config.php';
+$pdo = connexionDB();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM Compte WHERE login = :login");
+    $stmt->bindParam(':login', $login);
+    $stmt->execute();
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['type_compte'] = $user['type_compte'];
+        $_SESSION['id_compte'] = $user['id_compte']; 
+
+        switch ($user['type_compte']) {
+            case 'admin': 
+                header("Location: adminboard.php");
+                exit();
+            case 'enseignant': 
+                header("Location: profboard.php");
+                exit();
+            case 'etudiant': 
+                header("Location: etudiantboard.php");
+                exit();
+        }
+    } else {
+        $error_message = "Identifiant ou mot de passe incorrect.";
+    }
 }
 ?>
 
@@ -25,10 +50,9 @@ if (!isset($_SESSION['id_compte']) || $_SESSION['type_compte'] !== 'enseignant')
 
     <div class="container">
         <button class="btn" onclick="location.href='Ajouternote.php'">Ajouter Evaluation</button>
-        <button class="btn" onclick="location.href='etuliste.php'">Acceder à la liste</button>
-        <button class="btn" onclick="location.href='Modifnote.php'">Modifier des notes</button>
+        <button class="btn" onclick="location.href='Modifnote.php'">Modifier les notes</button>
+        <button class="btn" onclick="location.href='listeetudiant_partieprof.php'">Acceder à la liste</button>
     </div>
 </body>
 </html>
 
-    

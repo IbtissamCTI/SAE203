@@ -6,13 +6,12 @@ ini_set('display_errors', 1);
 $pdo = connexionDB();
 $etudiants = [];
 
-// Récupérer tous les groupes
+
 $stmtGroupes = $pdo->prepare("SELECT id_groupe, libelle FROM Groupe");
 $stmtGroupes->execute();
 $groupes = $stmtGroupes->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupérer les étudiants et calculer leur moyenne pondérée
-$id_enseignant = 2; // ID de l'enseignant approprié
+$id_enseignant = 2; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['groupe'])) {
     $id_groupe = $_POST['groupe'];
@@ -60,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['groupe'])) {
 <head>
     <meta charset="UTF-8">
     <title>Liste des étudiants</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/css_liste_etudiants.css">
 </head>
 <body>
 <div class="container">
@@ -75,7 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['groupe'])) {
                 <?php } ?>
             </select>
         </div>
+        <p>
         <button type="submit" class="btn btn-primary">Afficher</button>
+        </p>
     </form>
 
     <?php if (!empty($etudiants)) { ?>
@@ -100,11 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['groupe'])) {
     <?php } else { ?>
         <p>Aucun étudiant trouvé.</p>
     <?php } ?>
-    <a href="profboard.php" class="btn btn-secondary mb-3">Retour</a>
-
-
-
-</div></body>
+</div>
+</body>
 </html>
 
 

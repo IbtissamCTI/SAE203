@@ -1,7 +1,7 @@
 <?php
 function connexionDB(){
     $host = "localhost";
-    $dbname = "NOTESAE203"; // Nouveau nom de la base de données
+    $dbname = "NOTESAE203"; 
     $user ="root";
     $pass ="";
 

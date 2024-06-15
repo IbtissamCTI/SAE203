@@ -4,8 +4,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('../photo/branch\ note\ 1.png'); /* Replace with your tree image path */
-    background-size: cover;
+    background-image: url('../photo/branch note 1.png'); 
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
 }
@@ -35,18 +35,20 @@ body {
 .header .logout:hover {
     background-color: #208b62;
 }
+
 #back-button {
     position: absolute;
-    top: 160px; /* Adjust the position as needed */
-    left: 80px; /* Adjust the position as needed */
+    top: 160px;
+    left: 80px; 
     cursor: pointer;
     z-index: 1;
 }
 
 #back-button .back-button-img {
-    width: 70px; /* Adjust the size as needed */
+    width: 70px; 
     height: auto;
 }
+
 .container {
     padding: 20px;
     margin: 20px auto;

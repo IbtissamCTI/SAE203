@@ -11,18 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $coef = $_POST['coef'];
     $date = $_POST['date'];
     $libelle = $_POST['libelle'];
-    $id_enseignant = 2; // Remplacez par l'ID de l'enseignant approprié
-    $id_ressource = 311; // Remplacez par l'ID de la ressource appropriée
-    $id_ue = 1; // Remplacez par l'ID de l'UE appropriée
+    $id_enseignant = 2; 
+    $id_ressource = 311; 
+    $id_ue = 1; 
 
-    // Vérification des coefficients pour le même libellé
+    
     $stmt_check_coef = $pdo->prepare('SELECT coef FROM Evaluation WHERE libelle = ? LIMIT 1');
     $stmt_check_coef->execute([$libelle]);
     $existing_coef = $stmt_check_coef->fetchColumn();
 
     if ($existing_coef !== false && $existing_coef != $coef) {
         echo "<script type='text/javascript'>
-                alert('Erreur : Tous les coefficients pour un même libellé doivent être identiques.');
+                alert('Erreur : Tous les coefficients pour le même libellé doivent être identiques.');
                 window.location.href = 'Ajouternote.php';
               </script>";
         exit();
@@ -32,50 +32,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$note, $date, $id_etudiant, $id_enseignant, $id_ressource, $id_ue, $coef, $libelle]);
 
     echo "<script type='text/javascript'>
-            alert('Ajout réussi');
+            alert('Ajouté avec succès');
             window.location.href = 'profboard.php';
           </script>";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Ajouter une note</title>
+    <title>Évaluation</title>
+    <link rel="stylesheet" href="../CSS/css_evaluation-prof.css">
 </head>
 <body>
-    <div class="starter-template">
-        <h1>Ajouter une note</h1>
-        <form method="post">
-            <div class="form-group">
+    <div class="header">
+        <div class="logo-container">
+            <img src="../photo/logoblanc.png" alt="NoteNote Logo" class="logo">
+        </div>
+        <button class="logout" onclick="location.href='login.php'">Quitter</button>
+    </div>
+
+    <div id="back-button">
+        <a href="profboard.php">
+            <img src="../photo/BOUTONARRIERE.png" alt="Back Button" class="back-button-img">
+        </a>
+    </div>
+
+    <div class="container">
+        <img src="../photo/titreevaluation.png" alt="Évaluation" class="evaluation-title">
+        <form method="post" class="evaluation-form">
+            <div class="form-left">
                 <label for="id_etudiant">ID Étudiant</label>
-                <input type="number" class="form-control" id="id_etudiant" name="id_etudiant" required>
-            </div>
-            <div class="form-group">
+                <input type="number" id="id_etudiant" name="id_etudiant" required>
+                
                 <label for="note">Note</label>
-                <input type="number" class="form-control" id="note" name="note" min="0" max="20" step="0.5" required>
-            </div>
-            <div class="form-group">
-                <label for="coef">Coefficient</label>
-                <input type="number" class="form-control" id="coef" name="coef" min="0" step="0.1" required>
-            </div>
-            <div class="form-group">
+                <input type="number" id="note" name="note" min="0" max="20" step="0.5" required>
+                
                 <label for="date">Date</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <input type="date" id="date" name="date" required>
             </div>
-            <div class="form-group">
+            <div class="form-right">
+                <label for="coef">Coefficient</label>
+                <input type="number" id="coef" name="coef" min="0" step="0.1" required>
+                
                 <label for="libelle">Libellé de l'évaluation</label>
-                <input type="text" class="form-control" id="libelle" name="libelle" required>
+                <input type="text" id="libelle" name="libelle" required>
             </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
-            <a href="profboard.php" class="btn btn-secondary">Annuler</a>
+            <div class="buttons">
+                <button type="button" class="btn" onclick="resetForm()">Effacer</button>
+                <button type="submit" class="btn">Envoyer</button>
+            </div>
         </form>
     </div>
+
+    <script>
+        function resetForm() {
+            document.getElementById('id_etudiant').value = '';
+            document.getElementById('note').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('coef').value = '';
+            document.getElementById('libelle').value = '';
+        }
+    </script>
 </body>
 </html>
-
-
-
