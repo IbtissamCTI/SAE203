@@ -48,7 +48,7 @@ Le mot de passe des espaces est: test
 ## Problèmes rencontrés lors du projet 
 
 Nous avons rencontré un problème depuis la dernière seance de SAE pour heberger le site sur AlwaysData. (Problem: Acces Denied)
-Luxchan tente de résoudre actuellement le problème d'hebergement en se dirigeant dans un hebergeur, le lien du site sera bientôt remis dans ce readme.
+Nous avons tenté de résoudre le problème en hebergant egalement sur Infinityfree mais malheureusement la même erreur apparait (403 FORBIDDEN). Nous faisons notre possible encore aujourd'hui pour résoudre ce problème d'hebergement. 
 Les chargés de l'espace étudiant en back-end ont rencontrés un problème technique.
 
 Nous vous prions de bien vouloir excuser ces gênes occasionées. 
